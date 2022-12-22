@@ -33,7 +33,19 @@ Comment基本上可以說是小型的post其屬性也與publication相同, 並�
 Comment擁有有Collect模組(自定義如何將其mint成NFT), Reference模組(定義誰可以進行comment, mirror)
 
 4. Mirror  
-Mirror的功能就像是reTweet，可以將其他內容進行轉貼分享，並且其屬性也與publication相同
+Mirror的功能就像是reTweet，可以將其他內容進行轉貼分享，並且其屬性也與publication相同。 
+但要注意Mirror並沒有ContentURI這個field，因此並無Collect Module也就代表mirror的內容無法被mint成NFT
 
-5. Collect
-6. Follow
+5. Collect  
+當使用者post一個publication出來時，會提供Collect Module的相關設定選項來選擇是否開放其他用戶mint 連接到該publication ContentURI的NFT。   
+並且可以自定義Collect的規則Ex: 開放否一段時間內可Mint, 限定的Mint數量。 
+
+6. Follow  
+Follow與web2世界的Follow有本質上的不同，當使用者Follow一個用戶時，會得到一個"Follow NFT"的證明。  
+其中根據Follow Module的設計，可以自定義不同的玩法，舉例：使用者可設定當其他用戶要Follow時須支付5 MATIC來換取一張"Follow NFT"
+並且Follow NFT具有線性增加的ID, 從1開始依序增加
+Built-in Governance也有針對Follow NFT進行對應的客製化設計，像是DAO投票時擁有該DAO Follow NFT越久的使用者，其投票比重越大等不同玩法。  
+
+7. Built-In Governance   
+使用者可以利用Follow NFT來與社群進行互動，包含投票、委任投票來參與社群的發展。   
+而社群(DAO)，則需要由開發者先部署可與Follow NFT串接的合約，並允許擁有Follow NFT的使用者進行議題的提案、表決等功能。  
