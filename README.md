@@ -1,7 +1,7 @@
 # LensProtocol_TRY
 LensProtocol 作為web3的社交圖譜底層支援，提供了
 
-三大Modules
+### 三大Modules
 1. Follow Modules
 2. Collect Modules
 3. Reference Modules
@@ -18,7 +18,7 @@ Ex: "fee-on-folow", "suvscription"，都可以客製化在Follow Modules的程�
 同樣的也可以自定義相關的規則.  
 Ex: 只允許擁有某些NFT的人可comment, follow（用於mirrors, comments的函式可以每個都是分別獨立的規則） 
 
-六大功能  
+### 六大功能  
 1. Profile  
 Profile NFT是 Lens中最核心的關鍵，每個獨立的地址有同擁有多個Profile NFT.  
 與其他鏈上身份協議的區別為，Lens Profile可以post Publications, 同時Profile NFT會記錄下所有posts, mirrors, comments及其內此Profile進行的交互紀錄．   
