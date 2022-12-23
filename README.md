@@ -49,3 +49,6 @@ Built-in Governance也有針對Follow NFT進行對應的客製化設計，像是
 7. Built-In Governance   
 使用者可以利用Follow NFT來與社群進行互動，包含投票、委任投票來參與社群的發展。   
 而社群(DAO)，則需要由開發者先部署可與Follow NFT串接的合約，並允許擁有Follow NFT的使用者進行議題的提案、表決等功能。  
+
+### Mumbai Testnet API Addresses
+官方有部署好與Lens Protocol互動的合約，在mumbai.polygonscan上就可以連接
