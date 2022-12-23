@@ -51,4 +51,54 @@ Built-in Governance也有針對Follow NFT進行對應的客製化設計，像是
 而社群(DAO)，則需要由開發者先部署可與Follow NFT串接的合約，並允許擁有Follow NFT的使用者進行議題的提案、表決等功能。  
 
 ### Mumbai Testnet API Addresses
-官方有部署好與Lens Protocol互動的合約，在mumbai.polygonscan上就可以連接
+官方有部署好與Lens Protocol互動的合約，在mumbai.polygonscan上就可以連接Metamask進行上述提到的六大功能所有操作：[LensHub Proxy (use this one for interactions!)](https://mumbai.polygonscan.com/address/0x60Ae865ee4C725cd04353b5AAb364553f56ceF82)。  
+找到Contract Tag下面就可以看到Read, Write Contract; Read, Write as Proxy兩大分類的Contract互動頁籤
+Proxy代表的是可升級合約，並且由 Proxy 合約和 Logic (或稱 Implementation)合約組成。使用者的交易是送往 Proxy 合約、和 Proxy 合約互動，Proxy 合約再去問 Logic 合約該怎麼處理使用者的請求。  
+接著就來看看跟核心功能有關的合約吧.  
+
+1. Profile    
+需Gas Fee   
+```function createProfile(DataTypes.CreateProfileData calldata vars)```.  
+```function setProfileImageURI(uint256 profileId, string calldata imageURI)```.  
+```function setDefaultProfile(uint256 profileId)```.  
+```function burn(uint256 tokenId)```.  
+```function setFollowModule(uint256 profileId, address followModule, bytes calldata followModuleData) external;```.  
+不需Gas Fee   
+```function getProfile(uint256 profileId)```.   
+
+2. Publication.  
+需Gas Fee   
+```function post(DataTypes.PostData calldata vars)```   
+不需Gas Fee.  
+
+3. Comment.  
+需Gas Fee   
+```function comment(DataTypes.CommentData calldata vars)```.  
+不需Gas Fee.  
+
+4. Mirror.  
+需Gas Fee   
+```function mirror(DataTypes.MirrorData calldata vars) external;```.  
+不需Gas Fee.  
+
+5. Collect.  
+需Gas Fee   
+```function collect(uint256 profileId,uint256 pubId, bytes calldata data) ```.  
+```function emitCollectNFTTransferEvent(uint256 profileId,uint256 pubId,uint256 collectNFTId,address from,address to)```.  
+
+不需Gas Fee.  
+```function getCollectNFT(uint256 profileId, uint256 pubId) external view returns (address);```.  
+```function getCollectModule(uint256 profileId, uint256 pubId) external view returns (address);```.  
+
+6. Follow.  
+需Gas Fee   
+```function emitFollowNFTTransferEvent(uint256 profileId, uint256 followNFTId, address from, address to) external```.  
+```function follow(uint256[] calldata profileIds, bytes[] calldata datas) external```.  
+```function setFollowNFTURI(uint256 profileId, string calldata followNFTURI) external;```.  
+```function setFollowModule(uint256 profileId, address followModule, bytes calldata followModuleData) external;```   
+不需Gas Fee.  
+```function getFollowNFT(uint256 profileId) external view returns (address);```.  
+```function getFollowNFTURI(uint256 profileId) external view returns (string memory);```.  
+```function getFollowModule(uint256 profileId) external view returns (address);```.  
+
+
