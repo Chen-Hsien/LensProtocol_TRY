@@ -85,7 +85,6 @@ Proxy代表的是可升級合約，並且由 Proxy 合約和 Logic (或稱 Imple
 需Gas Fee   
 ```function collect(uint256 profileId,uint256 pubId, bytes calldata data) ```.  
 ```function emitCollectNFTTransferEvent(uint256 profileId,uint256 pubId,uint256 collectNFTId,address from,address to)```.  
-
 不需Gas Fee.  
 ```function getCollectNFT(uint256 profileId, uint256 pubId) external view returns (address);```.  
 ```function getCollectModule(uint256 profileId, uint256 pubId) external view returns (address);```.  
