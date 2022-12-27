@@ -7,16 +7,27 @@ LensProtocol 作為web3的社交圖譜底層支援，提供了
 3. Reference Modules
 
 #### Follow Modules
-當用戶想要進行Follow的動作時便會調用此Module，使用者可以隨時自行選擇,修改follow module的方式   
-Ex: "fee-on-folow", "suvscription"，都可以客製化在Follow Modules的程式碼中
+當用戶想要進行Follow的動作時便會調用此Module，使用者可以隨時自行選擇,修改follow module的方式    
+Ex: "fee-on-folow", "suvscription"，都可以客製化在Follow Modules的程式碼中  
+* ProfileFollowModule，正常 follow，沒有限制  
+* ApprovalFollowModule，只有授權過的地址可以 follow  
+* FeeFollowModule，follow 需要付費   
+* RevertFollowModule，不允許 follow，否則直接失敗  
 
 #### Collect Modules
-當用戶進行collect profile的動作時就會呼叫此Function, 所有post都需要附加一個collect module進行互動。   
+當用戶進行collect profile的動作時就會呼叫此Function, 所有post都需要附加一個collect module進行互動。  
+* FreeCollectModule，免費 collect  
+* FeeCollectModule，用戶需要支付一定量的費用（Token）才能 collect  
+* TimedFeeCollectModule，用戶只能在內容髮布後的一段時間內進行 collect，且需要支付費用  
+* LimitedFeeCollectModule，用戶需要支付費用，並且有數量上限，例如最多只能 collect 500份  
+* LimitedTimedFeeCollectModule，用戶需要支付費用，並且有數量上限，同時也有時間限制  
+* RevertCollectModule，任何情況下都不能 collect，否則交易失敗  
 
 #### Reference Modules
 當一個profile進行與特定profile's publication reference的動作時就會用到此模組, 一但選擇reference對象後便不能修改，但可以選擇不與任何profile's publication進行關聯。   
 同樣的也可以自定義相關的規則.  
 Ex: 只允許擁有某些NFT的人可comment, follow（用於mirrors, comments的函式可以每個都是分別獨立的規則） 
+* FollowerOnlyReferenceModule，只有 follower 可以进行 reference.  
 
 ### 六大功能  
 1. Profile  
