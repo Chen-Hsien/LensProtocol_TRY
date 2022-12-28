@@ -35,7 +35,7 @@ Profile NFT是 Lens中最核心的關鍵，每個獨立的地址有同擁有多�
 與其他鏈上身份協議的區別為，Lens Profile可以post Publications, 同時Profile NFT會記錄下所有posts, mirrors, comments及其內此Profile進行的交互紀錄．   
 
 2. Publication(Posts)  
-Publication 代表著lens內的所有原創內容包含三種型態: posts, comments, mirrors; Post是最基礎的交互內容，並在其加上comment, mirros額外的功能。  
+Publication 代表著lens內的所有原創內容包含三種型態: posts, comments, mirrors; Post是最基礎的互動內容，並在其加上comment, mirros額外的功能。  
 Publication都是基於用戶的ProfileNFT來發出，同時要注意Publications並不是NFT.  
 
 3. Comment  
